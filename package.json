@@ -1,0 +1,11 @@
+{
+  "name": "bluesky-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "post": "node post.js"
+  },
+  "dependencies": {
+    "@atproto/api": "^0.13.0"
+  }
+}
