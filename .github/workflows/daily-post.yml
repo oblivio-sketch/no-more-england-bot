@@ -1,0 +1,25 @@
+name: Daily Bluesky Post
+
+on:
+  schedule:
+    - cron: "0 11 * * *" # Every day at 11:00 UTC
+  workflow_dispatch:      # Also allows manual triggering
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Post to Bluesky
+        run: npm run post
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
