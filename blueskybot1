@@ -1,5 +1,0 @@
-git init
-  git add .
-  git commit -m "init bot"
-  git remote add origin https://github.com/oblivio_sketch/no-more-england-bot.git
-  git push -u origin main
